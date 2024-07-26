@@ -1,0 +1,73 @@
+---
+
+---
+
+<header
+  class="flex justify-between items-center px-6 py-10 lg:px-[11.5dvw] lg:justify-normal lg:gap-[45px] z-0"
+>
+  <img src="images/logo.svg" alt="Shorlty" />
+
+  <div class="hidden lg:flex lg:justify-between lg:w-full lg:items-center">
+    <ul class="flex gap-[29px] font-bold text-gray-400">
+      <li><a href="#">Features</a></li>
+      <li><a href="#">Pricing</a></li>
+      <li><a href="#">Resources</a></li>
+    </ul>
+    <div class="flex gap-4 text-gray-400 font-bold items-center">
+      <a href="#">Login</a>
+      <a
+        href="#"
+        class="bg-cyan-400 text-white px-6 py-2 rounded-[28px] font-bold"
+      >
+        Sign up
+      </a>
+    </div>
+  </div>
+  <div class="w-6 flex flex-col gap-[6px] lg:hidden" id="ham-menu">
+    <div class="w-full h-[3px] bg-gray-400"></div>
+    <div class="w-full h-[3px] bg-gray-400"></div>
+    <div class="w-full h-[3px] bg-gray-400"></div>
+  </div>
+</header>
+<div
+  class="bg-[#3A3054] z-10 absolute left-6 right-6 top-20 rounded-[10px] py-10 flex flex-col items-center text-white font-bold hidden"
+  id="mobile-nav"
+>
+  <ul class="flex flex-col gap-[30px] pb-8 items-center">
+    <li><a href="#">Features</a></li>
+    <li><a href="#">Pricing</a></li>
+    <li><a href="#">Resources</a></li>
+  </ul>
+  <div
+    class="flex flex-col items-center w-[80%] gap-6 pt-8 border-t-[1px] border-gray-300"
+  >
+    <a href="#">Login</a>
+    <a
+      href="#"
+      class="bg-cyan-400 text-white px-6 py-3 rounded-[28px] w-full text-center"
+    >
+      Sign up
+    </a>
+  </div>
+</div>
+<div class="absolute min-h-dvh top-0 left-0 right-0 z-0 hidden" id="overlay">
+</div>
+
+<script>
+  const hamMenu = document.querySelector("#ham-menu");
+  const mobileNav = document.querySelector("#mobile-nav");
+  const overlay = document.querySelector("#overlay");
+  console.log(mobileNav);
+  console.log(hamMenu);
+
+  hamMenu.addEventListener("click", () => {
+    mobileNav.classList.remove("hidden");
+    overlay.classList.remove("hidden");
+  });
+
+  overlay.addEventListener("click", () => {
+    console.log("Overlay clicked");
+    overlay.classList.add("hidden");
+    mobileNav.classList.add("hidden");
+  });
+</script>

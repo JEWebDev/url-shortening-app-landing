@@ -1,0 +1,110 @@
+---
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import FeatureCard from "../components/Feature-card.astro";
+import Cta from "../components/Cta.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Shortly | More than just shorter links</title>
+  </head>
+  <body>
+    <Header />
+    <main class="min-h-max relative">
+      <Hero />
+      <section
+        id="features-section"
+        class="px-6 bg-[#EFF1F7] flex flex-col gap-[6rem] pb-[6rem] xl:px-[11.5dvw] items-center"
+      >
+        <div
+          id="section-description"
+          class="flex flex-col gap-4 xl:px-[11.5dvw] xl:justify-center xl:items-center"
+        >
+          <h2 class="font-bold text-[1.75rem] text-center xl:text-[2.5rem]">
+            Advanced Statistics
+          </h2>
+          <p
+            class="leading-[1.75] text-gray-400 text-center xl:text-[1.125rem]"
+          >
+            Track how your links are performing across the web with our advanced
+            statistics dashboard
+          </p>
+        </div>
+
+        <div
+          id="features"
+          class="flex flex-col xl:flex-row xl:min-h-[400px] xl:min-w-full"
+        >
+          <FeatureCard
+            img="images/icon-brand-recognition.svg"
+            alt="a growing bars graph"
+            heading="Brand Recognition"
+            description="Boost your brand recognition with each click. Generic links don't mean a thing. Branded links help instil confidence in your content."
+          />
+          <div
+            id="cyan-line"
+            class="min-h-24 flex justify-center xl:min-w-8 xl:items-center xl:flex-1"
+          >
+            <div
+              id="line"
+              class="min-h-full w-2 bg-cyan-400 xl:min-w-full xl:min-h-2"
+            >
+            </div>
+          </div>
+          <FeatureCard
+            img="images/icon-detailed-records.svg"
+            alt="a circular boost meter"
+            heading="Detailed Records"
+            description="Gain insights into who is clicking your links. Knowing when and where people engage with your content helps inform better decisions"
+          />
+          <div
+            id="cyan-line"
+            class="min-h-24 flex justify-center xl:min-w-8 xl:items-center xl:flex-1"
+          >
+            <div
+              id="line"
+              class="min-h-full w-2 bg-cyan-400 xl:min-w-full xl:min-h-2"
+            >
+            </div>
+          </div>
+          <FeatureCard
+            img="images/icon-fully-customizable.svg"
+            alt="markers, pens and different customizing tools"
+            heading="Fully Customizable"
+            description="Improve brand awareness and content discoverability through customizable links, supercharging audience engagement"
+          />
+        </div>
+      </section>
+      <Cta />
+    </main>
+  </body>
+</html>
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap");
+  body {
+    min-height: 100dvh;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    position: relative;
+  }
+
+  @media (min-width: 80rem) {
+    #features-section {
+      #feature-card:nth-child(1) {
+        align-self: flex-start;
+      }
+      #feature-card:nth-child(3) {
+        align-self: center;
+      }
+      #feature-card:nth-child(5) {
+        align-self: flex-end;
+      }
+    }
+  }
+</style>
