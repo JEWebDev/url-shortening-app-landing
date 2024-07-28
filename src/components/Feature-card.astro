@@ -11,18 +11,20 @@ const { img, alt, heading, description } = Astro.props;
 
 <article
   id="feature-card"
-  class="bg-white px-8 pb-11 flex flex-col items-center rounded-[5px] gap-8 xl:max-w-[350px]"
+  class="bg-white px-8 pb-11 flex flex-col items-center rounded-[5px] gap-8 xl:max-w-[21.875rem]"
 >
   <div
     id="img-background"
-    class="max-w-[88px] bg-[#3A3054] px-6 py-6 rounded-full mt-[-44px]"
+    class="max-w-[5.5rem] bg-[#3A3054] px-6 py-6 rounded-full mt-[-2.75rem]"
   >
     <img src={img} alt={alt} />
   </div>
   <div id="card-description" class="flex flex-col gap-3">
-    <h3 class="text-center text-[22px] font-bold xl:text-left">{heading}</h3>
+    <h3 class="text-center text-[1.375rem] font-bold xl:text-left">
+      {heading}
+    </h3>
     <p
-      class="text-center text-[15px] text-gray-400 leading-[1.73] xl:text-left"
+      class="text-center text-[0.9375rem] text-gray-400 leading-[1.73] xl:text-left"
     >
       {description}
     </p>

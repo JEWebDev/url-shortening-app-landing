@@ -3,6 +3,7 @@ import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";
 import FeatureCard from "../components/Feature-card.astro";
 import Cta from "../components/Cta.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <html lang="en">
@@ -11,16 +12,62 @@ import Cta from "../components/Cta.astro";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <meta
+      name="description"
+      content="More than just shorter links, boost your brand recognition, get detailed insights and fully customize your links"
+    />
+    <script defer src="/src/javascript/script.js"></script>
     <title>Shortly | More than just shorter links</title>
   </head>
   <body>
     <Header />
-    <main class="min-h-max relative">
+    <main class="min-h-dvh relative">
       <Hero />
       <section
         id="features-section"
         class="px-6 bg-[#EFF1F7] flex flex-col gap-[6rem] pb-[6rem] xl:px-[11.5dvw] items-center"
       >
+        <div
+          id="link-shortening"
+          class="bg-[#3A3054]
+          bg-[url('images/bg-shorten-mobile.svg')]
+          lg:bg-[url('images/bg-shorten-desktop.svg')]
+          bg-no-repeat
+          px-6
+          bg-right-top
+          py-6
+          rounded-[0.625rem]
+          min-w-full
+          mt-[-80px]
+          xl:min-w-[1110px]
+          xl:max-w-[1110px]
+          xl:py-14
+          xl:px-16
+          xl:bg-cover"
+        >
+          <form
+            action=""
+            class="flex flex-col gap-6 xl:flex-row"
+            id="link-form"
+          >
+            <div class="wrapper">
+              <input
+                type="text"
+                placeholder="Shorten a link here..."
+                class="leading-[2.25] px-4 py-[0.375rem] rounded-md min-w-full xl:min-w-[769px]"
+                id="user-link"
+              />
+              <p class="text-[##f46363] text-[1rem] hidden">
+                Please add a link
+              </p>
+            </div>
+            <button
+              class="py-[0.625rem] bg-[#2BD0D0] text-white rounded-md xl:px-10 xl:py-[1.125rem] xl:text-xl font-bold"
+              id="shorten-btn">Shorten It</button
+            >
+          </form>
+        </div>
+        <div id="links-container"></div>
         <div
           id="section-description"
           class="flex flex-col gap-4 xl:px-[11.5dvw] xl:justify-center xl:items-center"
@@ -81,6 +128,7 @@ import Cta from "../components/Cta.astro";
         </div>
       </section>
       <Cta />
+      <Footer />
     </main>
   </body>
 </html>
@@ -94,6 +142,13 @@ import Cta from "../components/Cta.astro";
     position: relative;
   }
 
+  .error {
+    border: 3px solid #f46363;
+    outline: 4px solid #f46363;
+  }
+  .error::placeholder {
+    color: #f46363;
+  }
   @media (min-width: 80rem) {
     #features-section {
       #feature-card:nth-child(1) {
